@@ -19,11 +19,11 @@ function distanciaBonita(salida, llegada) {
     var distanciaMinima = Math.abs(salida[0] - llegada[0]) + Math.abs(salida[1] - llegada[1]);
     var diferencia = 0;
     
-    //Caso 1: Rectas horizontales paralelas
+    //Caso 1: Puntos en rectas horizontales paralelas y mismo rango [x.floor, x.ceil]
     if( (estaCalleParalela(salida[0], llegada[0])) && (!estaCalleParalela(salida[1], llegada[1])) ) 
         diferencia = Math.min( minDistanciaCruce(salida[0]), minDistanciaCruce(llegada[0]) );
 
-    //Caso 2: Rectas verticales paralelas
+    //Caso 2: Puntos en rectas verticales paralelas y mismo rango [y.floor, y.ceil]
     else if( (!estaCalleParalela(salida[0], llegada[0])) && (estaCalleParalela(salida[1], llegada[1])) )
         diferencia = Math.min( minDistanciaCruce(salida[1]), minDistanciaCruce(llegada[1]) );
     
